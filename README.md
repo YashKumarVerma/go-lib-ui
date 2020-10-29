@@ -1,5 +1,17 @@
 # go-lib-ui
-This repository is supposed to be consumed as a sub-module in other cli projects. The main motive behind forming sub-modules for my commonly used libraries / packages like ui, config etc is to align with DRY principles and have a central library which provides apis to all the projects.
+A simple handy cli ui library that supports printing messages with context along with color and emoji support. 
 
-## Trimming unwanted content
-As we are implementing submodules, there might be unwanted files in the final codebase (`README.md`, `.github`, `.git`). This should not be an issue, as the binary build won't be affected by those files, but just in case you are bothered about a few extra files, there is a `Makefile` available to clear the unwanted files.
+## Why a module
+this has been published as a separate module because I realized that I was using similar functionality in multiple golang projects and hence duplicating a lot of code. Also as adding and managing new features was an issue. Publishing it as a separate module then using it across multiple projects would serve the purpose.
+
+## Usage
+Include the library 
+```
+# fetch the library
+go get github.com/YashKumarVerma/go-lib-ui
+```
+
+## Under the hood
+The package uses two very popular libraries 
+- [`github.com/fatih/color`](github.com/fatih/color) 
+- [`github.com/kyokomi/emoji`](github.com/kyokomi/emoji)
